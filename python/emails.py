@@ -7,7 +7,7 @@ import json
 Imports emails into new table. Have skipped fields which do not always exist.
 
 CREATE TABLE imp_emails (person_id string,email string);
-add file /vagrant/languages.py ;
+add file /vagrant/emails.py ;
 INSERT OVERWRITE TABLE imp_emails SELECT TRANSFORM(lines) USING 'python emails.py' AS (person_id,email ) FROM u_data;
 select * from imp_languages limit 100 ;
 
