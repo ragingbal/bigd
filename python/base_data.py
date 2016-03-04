@@ -20,7 +20,7 @@ select * from imp_base limit 100 ;
 #w = open("test.out",'w+')
 #for line in f:
 
-#for line in sys.stdin:
+for line in sys.stdin:
 	try:
 		line = line.strip()
 		t = json.loads(line)
