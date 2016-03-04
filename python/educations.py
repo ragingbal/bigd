@@ -20,6 +20,7 @@ for line in sys.stdin:
         output = []
         person_id = str(t.get('person_id'))
         educations = t.get('educations')
+
         output = []
         for education in educations:
             school_id = education['id'].encode('utf8')
@@ -29,8 +30,8 @@ for line in sys.stdin:
             school_year = education['year'].encode('utf8')
             thisLoc = '\t'.join([person_id,school_id,school,school_uid,school_type,school_year])
             output.append(thisLoc)
-        print('\n'.join(output))
-        print(output)
+        if len(educations) >0 :
+            print('\n'.join(output))
 
     except Exception  as e:
         pass
