@@ -14,16 +14,15 @@ INSERT OVERWRITE TABLE imp_educations SELECT TRANSFORM(lines) USING 'python educ
 
 
 for line in sys.stdin:
-    #try:
+    try:
         line = line.strip()
         t = json.loads(line)
         output = []
         person_id = str(t.get('person_id'))
         educations = t.get('educations')
-        if educations == None:
-            break
-        if len(educations) == 0:
-            break
+        if educations != None:
+            raise ValueError('no educations array')
+
         print(educations)
         output = []
 
@@ -39,5 +38,5 @@ for line in sys.stdin:
         if len(output) >0 :
             print('\n'.join(output))
 
-    #except Exception  as e:
+    except Exception  as e:
         pass
