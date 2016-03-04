@@ -27,7 +27,7 @@ for line in sys.stdin:
 			location_type = location['location_type'].encode('utf8')
 			thisLoc = '\t'.join([person_id,lid,geocoded_name,source,location_type])
 			output.append(thisLoc)
-			print('\n'.join(output))
+		print('\n'.join(output))
 
 	except Exception  as e:
         pass
