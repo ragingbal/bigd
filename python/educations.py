@@ -28,7 +28,7 @@ for line in sys.stdin:
                 school_id = education['id'].encode('utf8')
                 school = education['school'].encode('utf8')
                 #school_uid = str(education['uid'])
-                school_type = education['type'].encode('utf8')
+                #school_type = education['type'].encode('utf8')
                 #school_year = 'NA' if education['year'] == None else str(education['year'])
                 thisLoc = '\t'.join([person_id,school_id,school,school_type])
                 output.append(thisLoc)
