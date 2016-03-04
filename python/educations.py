@@ -28,8 +28,8 @@ for line in sys.stdin:
             school = education['school'].encode('utf8')
             school_uid = str(education['school_uid'])
             school_type = education['type'].encode('utf8')
-            school_year = 'NA' if education['year'] == None else str(education['year'])
-            thisLoc = '\t'.join([person_id,school_id,school,school_uid,school_type,school_year])
+            #school_year = 'NA' if education['year'] == None else str(education['year'])
+            thisLoc = '\t'.join([person_id,school_id,school,school_uid,school_type])
             output.append(thisLoc)
         if len(educations) >0 :
             print('\n'.join(output))
