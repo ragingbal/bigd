@@ -30,7 +30,7 @@ for line in sys.stdin:
                 #school_uid = str(education['uid'])
                 #school_type = education['type'].encode('utf8')
                 #school_year = 'NA' if education['year'] == None else str(education['year'])
-                thisLoc = '\t'.join([person_id,school_id,school,school_type])
+                thisLoc = '\t'.join([person_id,school_id,school])
                 output.append(thisLoc)
         if len(output) >0 :
             print('\n'.join(output))
