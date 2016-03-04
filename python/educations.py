@@ -30,6 +30,7 @@ for line in sys.stdin:
             thisLoc = '\t'.join([person_id,school_id,school,school_uid,school_type,school_year])
             output.append(thisLoc)
         print('\n'.join(output))
+        print(output)
 
     except Exception  as e:
         pass
