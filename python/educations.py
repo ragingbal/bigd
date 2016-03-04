@@ -24,14 +24,15 @@ for line in sys.stdin:
         output = []
 
         for education in educations:
-            school_id = education['id'].encode('utf8')
-            school = education['school'].encode('utf8')
-            school_uid = str(education['uid'])
-            school_type = education['type'].encode('utf8')
-            #school_year = 'NA' if education['year'] == None else str(education['year'])
-            thisLoc = '\t'.join([person_id,school_id,school,school_uid,school_type])
-            output.append(thisLoc)
-        if len(educations) >0 :
+            if 'school' in education.keys():
+                school_id = education['id'].encode('utf8')
+                school = education['school'].encode('utf8')
+                school_uid = str(education['uid'])
+                school_type = education['type'].encode('utf8')
+                #school_year = 'NA' if education['year'] == None else str(education['year'])
+                thisLoc = '\t'.join([person_id,school_id,school,school_uid,school_type])
+                output.append(thisLoc)
+        if len(output) >0 :
             print('\n'.join(output))
 
     #except Exception  as e:
