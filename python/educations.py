@@ -33,4 +33,3 @@ for line in sys.stdin:
 
 	except Exception  as e:
         pass
-
