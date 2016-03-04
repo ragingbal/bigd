@@ -26,7 +26,7 @@ for line in sys.stdin:
         for education in educations:
             school_id = education['id'].encode('utf8')
             school = education['school'].encode('utf8')
-            school_uid = education['school_uid'].encode('utf8')
+            school_uid = str(education['school_uid'])
             school_type = education['type'].encode('utf8')
             school_year = education['year'].encode('utf8')
             thisLoc = '\t'.join([person_id,school_id,school,school_uid,school_type,school_year])
