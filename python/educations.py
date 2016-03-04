@@ -21,9 +21,9 @@ for line in sys.stdin:
         person_id = str(t.get('person_id'))
         educations = t.get('educations')
         if educations == None:
-            pass
+            break
         if len(educations) == 0:
-            pass
+            break
         print(educations)
         output = []
 
