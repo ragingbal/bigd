@@ -20,7 +20,7 @@ for line in sys.stdin:
         output = []
         person_id = str(t.get('person_id'))
         educations = t.get('educations')
-        if educations != None:
+        if educations == None:
             raise ValueError('no educations array')
 
         print(educations)
@@ -35,7 +35,7 @@ for line in sys.stdin:
                 #school_year = 'NA' if education['year'] == None else str(education['year'])
                 thisLoc = '\t'.join([person_id,school_id,school])
                 output.append(thisLoc)
-        if len(output) >0 :
+        if len(output) > 0 :
             print('\n'.join(output))
 
     except Exception  as e:
