@@ -20,6 +20,8 @@ for line in sys.stdin:
         output = []
         person_id = str(t.get('person_id'))
         educations = t.get('educations')
+        if educations == None:
+            pass
         if len(educations) == 0:
             pass
         print(educations)
