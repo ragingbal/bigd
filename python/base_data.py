@@ -10,16 +10,15 @@ Base data of the user.
 
 CREATE TABLE imp_base (person_id string,name string,first_name string,last_name string,username string,country_code string,age string,email string,gender string,birthday string,location_independent string)
 add file /home/hive/gm_scripts/base_data.py ;
-INSERT OVERWRITE TABLE imp_base SELECT TRANSFORM(lines) USING 'python base_data.py' AS (person_id,name,first_name,last_name,username,country_code,age,email,gender,birthday) FROM u_data;
-
+INSERT OVERWRITE TABLE imp_base SELECT TRANSFORM(lines) USING 'python base_data.py' AS (person_id,name,first_name,last_name,username,country_code,age,email,gender,birthday,location_independent) FROM u_data;
 select * from imp_base limit 100 ;
 
 
 '''
 
-f = open("people.json",'r')
+#f = open("people.json",'r')
 #w = open("test.out",'w+')
-for line in f:
+#for line in f:
 
 #for line in sys.stdin:
 	try:
