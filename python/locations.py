@@ -13,21 +13,22 @@ INSERT OVERWRITE TABLE imp_locations SELECT TRANSFORM(lines) USING 'python locat
 
 
 for line in sys.stdin:
-	line = line.strip()
-	t = json.loads(line)
-	output = []
-	person_id = str(t.get('person_id'))
+	try:
+		line = line.strip()
+		t = json.loads(line)
+		output = []
+		person_id = str(t.get('person_id'))
+		locations = t.get('locations')
+		output = []
+		for location in locations:
+			source = location['source'].encode('utf8')
+			geocoded_name = location['geocoded_name'].encode('utf8')
+			lid = str(location['id'])
+			location_type = location['location_type'].encode('utf8')
+			thisLoc = '\t'.join([person_id,lid,geocoded_name,source,location_type])
+			output.append(thisLoc)
+			print('\n'.join(output))
 
-	locations = t.get('locations')
-	output = []
-	for location in locations:
-		source = str(location['source'].encode('utf8'))
-		geocoded_name = str(location['geocoded_name'].encode('utf8'))
-		lid = str(location['id'].encode('utf8'))
-		#tuid = str(location['uid'])
-		location_type = str(location['location_type'].encode('utf8'))
-
-		thisLoc = '\t'.join([person_id,lid,geocoded_name,source,location_type])
-		output.append(thisLoc)
-	print('\n'.join(output))
+	except Exception  as e:
+        pass
 
