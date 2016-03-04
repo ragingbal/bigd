@@ -22,8 +22,7 @@ for line in sys.stdin:
         educations = t.get('educations')
         if educations == None:
             raise ValueError('no educations array')
-
-        print(educations)
+            
         output = []
 
         for education in educations:
