@@ -20,8 +20,9 @@ for line in sys.stdin:
         output = []
         person_id = str(t.get('person_id'))
         educations = t.get('educations')
-
+        print(educations)
         output = []
+
         for education in educations:
             school_id = education['id'].encode('utf8')
             school = education['school'].encode('utf8')
