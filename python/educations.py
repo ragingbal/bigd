@@ -14,7 +14,7 @@ INSERT OVERWRITE TABLE imp_educations SELECT TRANSFORM(lines) USING 'python educ
 
 
 for line in sys.stdin:
-    try:
+    #try:
         line = line.strip()
         t = json.loads(line)
         output = []
@@ -34,5 +34,5 @@ for line in sys.stdin:
         if len(educations) >0 :
             print('\n'.join(output))
 
-    except Exception  as e:
+    #except Exception  as e:
         pass
