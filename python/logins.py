@@ -20,9 +20,11 @@ for line in sys.stdin:
         output = []
         person_id = str(t.get('person_id'))
         vMap = map(str, t.get('logins'))
+        
         for v in vMap:
             output.append('\t'.join([person_id,v]))
-        print '\n'.join(output)
+        if len(vMap) > 0: 
+            print '\n'.join(output)
 
     except Exception  as e:
         pass
