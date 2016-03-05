@@ -11,7 +11,7 @@ for line in sys.stdin:
         vMap = map(str, t.get('friend_ids'))
         for v in vMap:
             output.append('\t'.join([person_id,v]))
-    if len(output) > 0:
-        print '\n'.join(output)
+        if len(output) > 0:
+            print '\n'.join(output)
     except Exception  as e:
         pass  
