@@ -4,14 +4,19 @@ import json
 from elasticsearch import Elasticsearch,helpers
 
 profiles = []
-es = Elasticsearch()
+
+# allow up to 25 connections to each node
+es = Elasticsearch(["159.100.250.246"], maxsize=25)
+es.indices.create('test')
+
+
 es_index = 'active_profiles'
 
 for line in sys.stdin:
     profile = line.strip()
     profiles.append(profile)
     if len(profiles) == 1000:
-        es.bulk_index(es_index, "profile", profiles, id_field="person_id")
+        helpers.bulk(es,profiles)
         profiles = []
 if len(profiles) > 0:
-    es.bulk_index(es_index, "profile", profiles, id_field="person_id")
+    helpers.bulk(es,profiles)
