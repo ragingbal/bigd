@@ -14,7 +14,7 @@ es_index = 'active_profiles'
 
 for line in sys.stdin:
     profile = line.strip()
-    profiles.append(profile.encode('utf8'))
+    profiles.append(profile.decode('utf8'))
     if len(profiles) == 1000:
         helpers.bulk(es,profiles)
         profiles = []
