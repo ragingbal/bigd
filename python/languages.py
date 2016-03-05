@@ -24,7 +24,8 @@ for line in sys.stdin:
         vMap = map(str, t.get('languages'))
         for v in vMap:
             output.append('\t'.join([person_id,v]))
-        print '\n'.join(output)
+        if len(output) > 0:
+            print '\n'.join(output)
     
     except Exception  as e:
         pass
