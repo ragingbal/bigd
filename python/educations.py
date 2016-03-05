@@ -6,7 +6,7 @@ import json
 '''
 Imports education into new table. Have skipped fields which do not always exist.
 
-CREATE TABLE imp_educations (person_id string,school_id string,school string,school_type string)
+CREATE TABLE imp_educations (person_id string,school_id string,school string,school_type string,school_year string)
 
 INSERT OVERWRITE TABLE imp_educations SELECT TRANSFORM(lines) USING 'python educations.py' AS (person_id,school_id,school,school_type) FROM u_data;
 
@@ -20,9 +20,9 @@ for line in sys.stdin:
         output = []
         person_id = str(t.get('person_id'))
         educations = t.get('educations')
+        
         if educations == None:
             raise ValueError('no educations array')
-
         output = []
 
         for education in educations:
