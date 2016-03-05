@@ -1,3 +1,6 @@
+import sys
+import json
+
 from elasticsearch import Elasticsearch,helpers
 
 profiles = []
