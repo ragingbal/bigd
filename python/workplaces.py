@@ -6,7 +6,7 @@ import json
 '''
 Imports employers into new table. Have skipped fields which do not always exist.
 
-CREATE TABLE imp_workplaces (person_id string,school_id string,school string,school_type string,school_year string)
+CREATE TABLE imp_workplaces (person_id string,employer_id string,employer string,location string,position string)
 
 INSERT OVERWRITE TABLE imp_educations SELECT TRANSFORM(lines) USING 'python educations.py' AS (person_id,school_id,school,school_type) FROM u_data;
 
