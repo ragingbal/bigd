@@ -7,7 +7,7 @@ profiles = []
 
 # allow up to 25 connections to each node
 es = Elasticsearch(["159.100.250.246"], maxsize=25)
-es.indices.create('test')
+#es.indices.create('test')
 
 
 es_index = 'active_profiles'
