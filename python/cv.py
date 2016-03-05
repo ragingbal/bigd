@@ -16,8 +16,6 @@ for line in sys.stdin:
     try:
         line = line.strip()
         t = json.loads(line)
-
-
         output = []
         person_id = str(t.get('person_id'))
         cv = t.get('cv')
