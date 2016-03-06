@@ -50,7 +50,7 @@ for line in sys.stdin:
     p.person_id = person_id
     p.name = name
 
-    profile.append[p]
+   
 
     print( person_id,name,first_name,last_name,username,country_code,age,email,gender,birthday,location_independent,workplaces,educations,locations,haves)
 
