@@ -47,9 +47,8 @@ for line in sys.stdin:
     for skip in skiplist:
         t.pop(skip, None)
 
-
-   
     res = es.index(index="pop-profiles", doc_type='test_profile', body=t)
+    print (t.get('person_id'))
 
 
 
