@@ -44,7 +44,7 @@ actions = []
 
 for line in sys.stdin:
     
-    #try:
+    try:
         profile = line.strip()
         processedCount = processedCount + 1;
         t = json.loads(profile)
@@ -59,13 +59,13 @@ for line in sys.stdin:
         }
         actions.append(action)
 
-        if len(actions) > 10:
+        if len(actions) > 20:
             helpers.bulk(es, actions)
             actions = []
 
         print ( '\t'.join( [str(processedCount),str(skippedCount)] ))
 
-    #except Exception  as e:
+    except Exception  as e:
         skippedCount = skippedCount + 1
         pass
 
