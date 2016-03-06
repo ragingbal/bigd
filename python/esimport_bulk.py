@@ -55,7 +55,7 @@ for line in sys.stdin:
         action = {
         "_index": "pop-profiles",
         "_type": "small_profile",
-        "_source": {str(t)}
+        "_source": json.dumps(t)
         }
         actions.append(action)
 
