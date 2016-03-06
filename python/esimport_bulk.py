@@ -55,7 +55,7 @@ for line in sys.stdin:
         action = {
         "_index": "pop-profiles",
         "_type": "small_profile",
-        "_source": {t}
+        "_source": {str(t)}
         }
         actions.append(action)
 
