@@ -79,7 +79,7 @@ for line in sys.stdin:
 
     print( person_id,name,first_name,last_name,username,country_code,age,email,gender,birthday,location_independent,workplaces,educations,locations,haves)
 
-    #res = es.index(index="test-profiles", doc_type='test_profile', body=p)
+    res = es.index(index="pop-profiles", doc_type='test_profile', body=t)
 
 
 
