@@ -10,16 +10,16 @@ from elasticsearch_dsl import DocType, String, Date, Nested, Boolean, analyzer
 
 
 class Profile(DocType):
-	person_id = String()
-	name = String()
-	workplaces = []
-	educations = []
+    person_id = String()
+    name = String()
+    workplaces = []
+    educations = []
 
-	class Meta:
+    class Meta:
         index = 'test-profiles'
-
+        
     def save(self, ** kwargs):
-    	super().save(** kwargs)
+        super().save(** kwargs)
 
 
 connections.create_connection(hosts=['159.100.250.246'], timeout=20)
