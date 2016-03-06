@@ -41,6 +41,9 @@ for line in sys.stdin:
     
     t = json.loads(profile)
 
+    t.pop("cv", None)
+    t.pop('friends_ids', None)
+
     person_id = 'NA' if t.get('person_id') == None else str(t.get('person_id')) 
     name = 'NA' if t.get('name') == None else t.get('name').encode('utf8')
     first_name = 'NA' if t.get('first_name') == None else t.get('first_name').encode('utf8')
