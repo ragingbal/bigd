@@ -9,7 +9,7 @@ from elasticsearch_dsl import DocType, String, Date, Nested, Boolean, analyzer
 
 
 
-class Profile(DocType):
+class ProfileNew(DocType):
     person_id = String()
     name = String()
     country_code = String()
@@ -21,7 +21,7 @@ class Profile(DocType):
     haves = []
 
     class Meta:
-        index = 'test-profiles'
+        index = 'new-profiles'
 
 
 connections.create_connection(hosts=['159.100.250.246'], timeout=20)
@@ -57,7 +57,7 @@ for line in sys.stdin:
     locations = t.get('locations')
     haves = t.get('haves')
 
-    p = Profile()
+    p = ProfileNew()
     p.person_id = person_id
     p.name = name
     p.gender = gender
@@ -69,6 +69,8 @@ for line in sys.stdin:
     p.haves = haves
 
     p.save()
+
+
 
    
 
