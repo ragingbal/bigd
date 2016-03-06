@@ -66,6 +66,7 @@ for line in sys.stdin:
         print ( '\t'.join( [str(processedCount),str(skippedCount)] ))
 
     except Exception  as e:
+        actions = []
         skippedCount = skippedCount + 1
         pass
 
