@@ -37,6 +37,7 @@ es_index = 'active_profiles'
 
 for line in sys.stdin:
     profile = line.strip()
+    print(profile)
     t = json.loads(profile)
 
     person_id = 'NA' if t.get('person_id') == None else str(t.get('person_id')) 
