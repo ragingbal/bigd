@@ -42,6 +42,7 @@ skippedCount = 0;
 
 
 for line in sys.stdin:
+    
     try:
         profile = line.strip()
         processedCount = processedCount + 1;
@@ -49,10 +50,11 @@ for line in sys.stdin:
         for skip in skiplist:
             t.pop(skip, None)
         res = es.index(index="pop-profiles", doc_type='small_profile', body=t)
-        print ('\t'.join(str(processedCount),str(skippedCount))
+        print ('\t'.join(str(processedCount),str(skippedCount)))
 
     except Exception  as e:
         skippedCount = skippedCount + 1
+        pass
 
 
 
