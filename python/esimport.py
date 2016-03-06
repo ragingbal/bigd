@@ -32,6 +32,6 @@ for line in sys.stdin:
     educations = t.get('educations')
     locations = t.get('locations')
 
-    print( person_id,name,first_name)
+    print( person_id,name,first_name,last_name,username,country_code,age,email,gender,birthdaz,location_independent)
 
     #res = es.index(index="test-index", doc_type='profile', body=profile)
