@@ -12,8 +12,12 @@ from elasticsearch_dsl import DocType, String, Date, Nested, Boolean, analyzer
 class Profile(DocType):
     person_id = String()
     name = String()
+    country_code = String()
+    location_independent = String()
+    gender = String()
     workplaces = []
     educations = []
+    locations = []
 
     class Meta:
         index = 'test-profiles'
@@ -54,7 +58,15 @@ for line in sys.stdin:
     p = Profile()
     p.person_id = person_id
     p.name = name
+    p.gender = gender
+    p.country_code = country_code
+    p.location_independent = location_independent
     p.workplaces = workplaces
+    p.educations = educations
+    p.locations = locations
+    p.haves = haves
+
+
     p.save()
 
    
