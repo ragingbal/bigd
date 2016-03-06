@@ -71,7 +71,7 @@ for line in sys.stdin:
     p.locations = locations
     p.haves = haves
 
-    p.save()
+    #p.save()
 
 
 
