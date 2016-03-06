@@ -15,6 +15,14 @@ class Profile(DocType):
 	workplaces = []
 	educations = []
 
+	class Meta:
+        index = 'test-profiles'
+
+    def save(self, ** kwargs):
+    	super().save(** kwargs)
+
+
+connections.create_connection(hosts=['159.100.250.246'], timeout=20)
 
 
 profiles = []
@@ -49,12 +57,13 @@ for line in sys.stdin:
     p = Profile()
     p.person_id = person_id
     p.name = name
+    p.save()
 
    
 
     print( person_id,name,first_name,last_name,username,country_code,age,email,gender,birthday,location_independent,workplaces,educations,locations,haves)
 
-    res = es.index(index="test-profiles", doc_type='test_profile', body=p)
+    #res = es.index(index="test-profiles", doc_type='test_profile', body=p)
 
 
 
