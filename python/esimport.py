@@ -3,6 +3,19 @@ import json
 
 from elasticsearch import Elasticsearch,helpers
 
+from elasticsearch_dsl.connections import connections
+from elasticsearch_dsl import Search
+from elasticsearch_dsl import DocType, String, Date, Nested, Boolean, analyzer
+
+
+
+class Profile(DocType):
+	person_id = String()
+	name = String()
+	workplaces = []
+
+
+
 profiles = []
 
 # allow up to 25 connections to each node
@@ -27,11 +40,15 @@ for line in sys.stdin:
     gender = 'NA' if t.get('gender') == None else t.get('gender').encode('utf8')
     birthday ='NA' if t.get('birthday') == None else t.get('birthday')
     location_independent ='NA' if t.get('location_independent') == None else t.get('location_independent')
-
     workplaces = t.get('workplaces')
     educations = t.get('educations')
     locations = t.get('locations')
+    haves = t.get('haves')
 
-    print( person_id,name,first_name,last_name,username,country_code,age,email,gender,birthday,location_independent,workplaces,educations,locations)
+    p = Profile()
+    p.person_id = person_id
+    p.name = name
+
+    print( person_id,name,first_name,last_name,username,country_code,age,email,gender,birthday,location_independent,workplaces,educations,locations,haves)
 
     #res = es.index(index="test-index", doc_type='profile', body=profile)
