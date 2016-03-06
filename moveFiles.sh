@@ -1,0 +1,11 @@
+hadoop fs -mv /user/data/extracted/cv.tsv /user/data/extracted/cv/cv.tsv
+hadoop fs -mv /user/data/extracted/educations.tsv /user/data/extracted/educations/educations.tsv
+hadoop fs -mv /user/data/extracted/emails.tsv /user/data/extracted/emails/emails.tsv
+hadoop fs -mv /user/data/extracted/friends_ids.tsv /user/data/extracted/friends_ids/friends_ids.tsv
+hadoop fs -mv /user/data/extracted/haves.tsv /user/data/extracted/haves/haves.tsv
+hadoop fs -mv /user/data/extracted/infos.tsv /user/data/extracted/infos/infos.tsv
+hadoop fs -mv /user/data/extracted/languages.tsv /user/data/extracted/languages/languages.tsv
+hadoop fs -mv /user/data/extracted/locations.tsv /user/data/extracted/locations/locations.tsv
+hadoop fs -mv /user/data/extracted/logins.tsv /user/data/extracted/logins/logins.tsv
+hadoop fs -mv /user/data/extracted/mails_sent.tsv /user/data/extracted/mails_sent/mails_sent.tsv
+hadoop fs -mv /user/data/extracted/workplaces.tsv /user/data/extracted/workplaces/workplaces.tsv
