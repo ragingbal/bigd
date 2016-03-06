@@ -68,7 +68,6 @@ for line in sys.stdin:
         skippedCount = skippedCount + 1
         pass
 
-
-
+helpers.bulk(es, actions)
 
 
