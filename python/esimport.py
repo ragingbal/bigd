@@ -17,9 +17,6 @@ class Profile(DocType):
 
     class Meta:
         index = 'test-profiles'
-        
-    def save(self, ** kwargs):
-        super().save(** kwargs)
 
 
 connections.create_connection(hosts=['159.100.250.246'], timeout=20)
