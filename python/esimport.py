@@ -37,18 +37,22 @@ skiplist.append('skip_tours')
 skiplist.append('logins')
 skiplist.append('infos')
 
+processedCount = 0;
+skippedCount = 0;
 
 
 for line in sys.stdin:
     try:
         profile = line.strip()
+        processedCount = processedCount + 1;
         t = json.loads(profile)
         for skip in skiplist:
             t.pop(skip, None)
         res = es.index(index="pop-profiles", doc_type='small_profile', body=t)
-        print (t.get('person_id'))
+        print ('\t'.join(processedCount,skippedCount))
     
     except Exception  as e:
+        skippedCount = skippedCount + 1
         pass
 
 
