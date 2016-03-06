@@ -51,10 +51,10 @@ for line in sys.stdin:
     gender = 'NA' if t.get('gender') == None else t.get('gender').encode('utf8')
     birthday ='NA' if t.get('birthday') == None else t.get('birthday')
     location_independent ='NA' if t.get('location_independent') == None else t.get('location_independent')
-    workplaces = t.get('workplaces')
-    educations = t.get('educations')
-    locations = t.get('locations')
-    haves = t.get('haves')
+    workplaces = t.get('workplaces').encode('utf8')
+    educations = t.get('educations').encode('utf8')
+    locations = t.get('locations').encode('utf8')
+    haves = t.get('haves').encode('utf8')
 
     p = Profile()
     p.person_id = person_id
