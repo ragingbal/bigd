@@ -54,6 +54,7 @@ for line in sys.stdin:
     p = Profile()
     p.person_id = person_id
     p.name = name
+    p.workplaces = workplaces
     p.save()
 
    
