@@ -61,6 +61,7 @@ for line in sys.stdin:
 
         if len(actions) > 999:
             helpers.bulk(es, actions)
+            actions = []
 
         print ( '\t'.join( [str(processedCount),str(skippedCount)] ))
 
@@ -68,6 +69,5 @@ for line in sys.stdin:
         skippedCount = skippedCount + 1
         pass
 
-helpers.bulk(es, actions)
 
 
