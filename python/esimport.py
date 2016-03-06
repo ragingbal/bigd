@@ -38,7 +38,7 @@ es_index = 'active_profiles'
 
 for line in sys.stdin:
     profile = line.strip()
-    print(profile)
+    
     t = json.loads(profile)
 
     person_id = 'NA' if t.get('person_id') == None else str(t.get('person_id')) 
@@ -63,9 +63,9 @@ for line in sys.stdin:
     p.gender = gender
     p.country_code = country_code
     p.location_independent = location_independent
-    #p.workplaces = workplaces
-    #p.educations = educations
-    #p.locations = locations
+    p.workplaces = workplaces
+    p.educations = educations
+    p.locations = locations
     p.haves = haves
 
 
